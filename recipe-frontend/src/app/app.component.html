@@ -1,0 +1,52 @@
+<div>
+  <mat-card>
+    <mat-card-title>Recipe Creator</mat-card-title>
+  </mat-card>
+  <div class="card-container">
+    <mat-card class="recipe-card">
+      <mat-card-title>Upload the image</mat-card-title>
+      <mat-card-content>
+        <p>Try the food item for which you want the recipe of.</p>
+        <input type="file" (change)="onFileSelected($event)">
+        <button mat-raised-button color="primary" (click)="uploadImage()">Upload</button>
+        <div *ngIf="showProgressBar" style="margin-top:2px ;">
+          <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </div>
+        <div *ngIf="extractedText && !showProgressBar">
+          <h2>Recipe:</h2>
+          <pre style="white-space: pre-wrap;">{{ extractedText }}</pre>
+          <button mat-icon-button (click)="copyToClipboard()">
+            <mat-icon>content_copy</mat-icon>
+          </button>
+          <!-- <button (click)="downloadPDF()">Download PDF</button> -->
+          <button mat-raised-button color="primary" (click)="downloadPDF()">Download as PDF</button>
+
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+    
+    <div *ngIf="previewImage" style="width: 40%;">
+      <mat-card class="image-card">
+        <mat-card-content>
+          <h2>Uploaded Image:</h2>
+          <div *ngIf="previewImage">
+            <img [src]="previewImage" alt="Uploaded Image">
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+  <div *ngIf="errorMessage">
+    <mat-card>
+      <mat-card-content>
+        <h2>Error:</h2>
+        <p>{{ errorMessage }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+
+<router-outlet></router-outlet>
