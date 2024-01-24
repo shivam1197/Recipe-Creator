@@ -61,22 +61,22 @@ This project integrates with the Geimin API for recipe suggestions. Ensure that 
 ## Sample Images
 
 _Home_
-![Example Image](Images\home.PNG)
+![Application Screenshot](Images/home.PNG)
 
 _Not uploading the Image_
 
-![Example Image](Images\error.PNG)
+![Application Screenshot](Images/error.PNG)
 
 _Uploading the image_
 
-![Example Image](Images\uploading.PNG)
+![Application Screenshot](Images/uploading.PNG)
 
 _Creation of recipe_
 
-![Example Image](Images\created_recipe.PNG)
+![Application Screenshot](Images/created_recipe.PNG)
 
 _PDF Creation of recipe_
-![Example Image](Images\pdfrecipe.PNG)
+![Application Screenshot](Images/pdfrecipe.PNG)
 
 ## Contributors
 
